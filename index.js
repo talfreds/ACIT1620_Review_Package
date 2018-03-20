@@ -28,6 +28,19 @@ bg.style.backgroundPosition = '0px 0px';
 ctrl.style.zIndex = '9999';
 bg.onclick = curElement;
 
+titled.style.position = 'absolute';
+titled.style.left = '10%';
+titled.style.top = '10%';
+titled.style.color = 'white';
+titled.style.fontSize = '24px';
+titled.style.borderBottom = '2px solid grey';
+
+descrd.style.position = 'absolute';
+descrd.style.left = '10%';
+descrd.style.top = '20%';
+descrd.style.color = 'white';
+descrd.style.fontSize = '24px';
+descrd.style.padding = '10px 0px 0px 0px';
 
 colorb.addEventListener('change', function(ev)
 {
@@ -202,9 +215,13 @@ function newS() {
     var storyB = bg.cloneNode(true);
     storyB.id = "dupe" + ++counter;
     
-    storyB.getElementsByTagName('titlet').id = "titlet" + counter;
     
-    storyB.getElementsByTagName('descrd').id = "descrd" + counter;
+    var tempTitle = titled.cloneNode(true);
+    
+    storyB.children[0].id = "titlet" + counter;
+    storyB.children[0].style.cssText = titled.style.cssText;
+        
+    storyB.children[1].id = "descrd" + counter;
     
     storyB.className = 'col-lg-3 col-md-4 col-sm-12';
     
